@@ -1,12 +1,17 @@
 """
-Helper functions for loading JSONL files and text matching.
+Utility Functions for ASHWAM Parser Monitor.
 
-This module provides utility functions for:
-- Loading and parsing JSONL files
-- Text matching and comparison utilities
+This module provides core utility functions for:
+- Loading and parsing JSONL files with robust error handling
+- Saving JSON reports with pretty formatting
+- Text matching for evidence span verification
+- Safe percentage calculations
 
 NOTE: This module uses only Python standard library.
 No external ML libraries or model training required.
+
+Author: Mohit
+Version: 1.0.0
 """
 
 import json
