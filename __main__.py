@@ -1,5 +1,5 @@
 """
-CLI entry point and orchestration for ashwam_monitor.
+CLI Entry Point and Orchestration for ASHWAM Parser Monitor.
 
 This module provides the command-line interface for running monitoring checks,
 including invariants validation, drift detection, and canary evaluation.
@@ -12,7 +12,13 @@ The orchestrator runs all checks in sequence and produces:
 2. drift_report.json - Day 0 vs Day 1 comparison metrics
 3. canary_report.json - Gold label evaluation results
 
-Final recommendation is based on the most severe status across all checks.
+Final recommendation is based on the most severe status across all checks:
+- deploy: All checks pass, safe to deploy
+- human_review: Minor issues detected, needs manual review
+- rollback: Critical issues detected, do not deploy
+
+Author: Mohit
+Version: 1.0.0
 """
 
 import argparse
