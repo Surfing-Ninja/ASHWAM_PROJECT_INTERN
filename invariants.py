@@ -1,10 +1,11 @@
 """
-Hard rule checks (schema, evidence validity, contradictions).
+Invariant Checks for Parser Safety Validation.
 
 This module implements invariant checks including:
-- Schema validation
-- Evidence validity verification
-- Contradiction detection
+- Schema validation (100% compliance required)
+- Evidence validity verification (95% minimum)
+- Hallucination detection (5% maximum tolerance)
+- Contradiction detection (zero tolerance)
 
 These checks are CRITICAL for production safety. Health data requires
 absolute correctness - invalid schema or hallucinated evidence can lead
@@ -17,6 +18,9 @@ These checks work WITHOUT complete ground truth labels. We verify:
 3. Logical consistency (no contradictions)
 
 This allows production monitoring without expensive labeling.
+
+Author: Mohit
+Version: 1.0.0
 
 NOTE: Uses only Python standard library. No ML models or training required.
 """
