@@ -1,10 +1,10 @@
 """
-Day 0 vs Day 1 comparison metrics.
+Drift Detection for Parser Version Comparison.
 
 This module provides functionality for:
-- Comparing parser outputs between different days
-- Calculating drift metrics
-- Detecting significant changes in output patterns
+- Comparing parser outputs between different days/versions
+- Calculating drift metrics across multiple dimensions
+- Detecting significant changes with severity classification
 
 DRIFT DETECTION PHILOSOPHY:
 Parser behavior should be relatively stable between deployments. Significant
@@ -17,10 +17,19 @@ changes in extraction patterns can indicate:
 Each threshold is calibrated based on acceptable variance in health data
 processing, where consistency is crucial for user trust and safety.
 
+THRESHOLDS:
+- Extraction Volume: 20% change triggers minor, 50% triggers severe
+- Uncertainty Rate: 15pp change triggers minor, 30pp triggers severe
+- Intensity Distribution: 25pp shift triggers minor, 50pp triggers severe
+- Domain Mix: 30pp change triggers minor, 60pp triggers severe
+
 DESIGN PRINCIPLE: NO GROUND TRUTH REQUIRED
 Drift detection compares Day 0 (baseline) to Day 1 (new version) outputs.
 We don't need labeled data - we only need consistent behavior between versions.
 This is a relative comparison, not an absolute accuracy measurement.
+
+Author: Mohit
+Version: 1.0.0
 
 NOTE: Uses only Python standard library (statistics module).
 No external ML libraries or model training required.
