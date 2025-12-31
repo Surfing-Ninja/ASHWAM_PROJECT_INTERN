@@ -1,0 +1,2 @@
+# ashwam_monitor requirements
+# No external dependencies needed - uses Python standard library only
