@@ -1,9 +1,10 @@
 """
-Small labeled test set evaluation.
+Canary Test Evaluation for Parser Safety Validation.
 
 This module provides functionality for:
 - Evaluating parser outputs against gold-labeled test data
-- Computing accuracy and other evaluation metrics
+- Computing safety-focused metrics (NOT accuracy metrics)
+- Generating detailed evaluation reports
 
 CRITICAL DESIGN DECISION: NO PRECISION/RECALL/F1
 
@@ -23,6 +24,9 @@ This is because:
    - Evidence Validity: Is every extracted quote actually in the journal?
    - Polarity Correctness: For items that match gold labels, is polarity right?
    - Contradictions: Does the parser contradict itself?
+
+Author: Mohit
+Version: 1.0.0
 
 This approach ensures we only evaluate what we can definitively verify,
 avoiding false negatives that could unfairly penalize valid extractions.
